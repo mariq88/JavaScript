@@ -1,0 +1,106 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background: #ccc;
+}
+
+a{
+	text-decoration: none;
+	font-family: 'Segoe UI', serif;
+	font-size: 14px;
+	text-transform: lowercase;
+	color: #666;
+}
+
+#wrapper{
+	position: relative;
+	width: 640px;
+	margin: 20px auto;
+}
+
+header{
+	width: 640px;
+	margin:0 auto;
+}
+
+	header h1{
+		font-family: "Segoe UI", sans-serif;
+		text-transform: uppercase;
+		font-size: 20px;
+		line-height: 50px;
+		color: #333;
+		text-shadow: 1px 1px #fff;
+	}
+
+#nav-btns{
+	width: 90%;
+	margin: 0 auto;
+	text-align: right;
+	padding-bottom: 5px;
+}
+
+	#nav-btns a{
+		padding: 10px;
+	}
+		#nav-btns a:hover{
+			text-decoration: underline;
+		}
+
+img{
+	border-radius: 10px; 
+	width:640px;
+	height: 400px;
+}
+
+#nav-circles{
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
+.pic-btn{
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	background: #217C01;
+	box-shadow: 1px 1px 1px #000;
+	border-radius: 6px;
+}
+	.pic-btn:hover{
+		background: #fff;
+		box-shadow: 1px 1px 1px #000;
+	}
+
+/*#btn-left{
+	position: absolute;
+	left: 10px;
+	top: 45%;
+	display: inline-block;
+	width: 18px;
+	height: 30px;
+	position: absolute;
+	background-image: url("pictures/btn-left.png");
+	background-repeat: no-repeat;
+	opacity: 0.5;
+}
+	#btn-left:hover{
+		opacity: 1;
+	}
+
+#btn-right{
+	position: absolute;
+	right: 10px;
+	top: 45%;
+	display: inline-block;
+	width: 18px;
+	height: 30px;
+	position: absolute;
+	background-image: url("pictures/btn-right.png");
+	background-repeat: no-repeat;
+	opacity: 0.5;
+}
+	#btn-right:hover{
+		opacity: 1;
+	}*/

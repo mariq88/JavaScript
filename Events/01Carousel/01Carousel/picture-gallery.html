@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Picture Gallery</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<header>
+		<h1>My first picture gallery</h1>
+	</header>
+	<div id="wrapper">
+		<div id="nav-btns">
+			<a href="#" onclick="changeImageBack()" id="back">Назад</a>
+			<a href="#" onclick="changeImage()" id="forward">Напред</a>
+		</div>
+		<!--<a href="#" id="btn-left" onclick="changeImageBack()"></a>
+		<a href="#" id="btn-right" onclick="changeImage()"></a>-->
+		<div id="nav-circles">
+			<a href="#" class="pic-btn"></a>
+			<a href="#" class="pic-btn"></a>
+			<a href="#" class="pic-btn"></a>
+			<a href="#" class="pic-btn"></a>
+			<a href="#" class="pic-btn"></a>
+			<a href="#" class="pic-btn"></a>
+			<a href="#" class="pic-btn"></a>
+			<a href="#" class="pic-btn"></a>
+		</div>
+		<img src="pictures/29.jpg" alt="picture" id="picture" onclick="changeImage()" />
+	</div>
+	<script src="gallery.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div id="wrapper">
+        <label>Font Color </label>
+        <input type="color" id="txt" />
+        <label>Background Color </label>
+        <input type="color" id="background" />
+        <button onclick="changeColors()">Exchange </button>
+        <div>
+            <textarea>Text to test styles on</textarea>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function changeColors() {
+            var fontColor = document.getElementById("txt").value;
+            var backgroundColor = document.getElementById("background").value;
+            var area = document.getElementsByTagName("textarea");
+            area[0].style.color = fontColor;
+            area[0].style.backgroundColor = backgroundColor;
+        }
+    </script>
+</body>
+</html>

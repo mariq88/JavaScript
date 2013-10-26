@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        div {
+            position:absolute;
+            width: 50px;
+            height:50px;
+            border-radius:30px;
+            background-color:#08a7bc;
+        }
+    </style>
+</head>
+<body onload="rotateDiv()">
+<script>
+        function rotateDiv() {
+        setInterval("createDivs()", 100);
+    }
+
+    function clear() {
+        document.body.innerHTML = "";
+    }
+
+    var addAngle = 0;
+    function createDivs() {
+        clear();
+        var centerX = 200;
+        var centerY = 150;
+        var radius = 100;
+        for (var i = 0; i < 5; i++) {
+            var angle = 70 * i + addAngle;
+            createDiv(centerX, centerY, radius, angle)
+        }
+        addAngle += 2;
+    }
+
+    function createDiv(centerX, centerY, radius, angle) {
+        var div = document.createElement("div");
+        div.style.top = (centerY + radius * Math.sin(angle * Math.PI / 180)) + "px";
+        div.style.left = (centerX + radius * Math.cos(angle * Math.PI / 180)) + "px";
+        document.body.appendChild(div);
+    }
+</script>
+</body>
+</html>

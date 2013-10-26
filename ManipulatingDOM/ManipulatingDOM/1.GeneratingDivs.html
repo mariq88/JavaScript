@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body style="margin: 0; padding: 0" id="body">
+    <input id="count" type="text" name="count" />
+    <input type="submit" onclick="generateDivs()" value="Create" />
+    <div id="rap">
+
+    </div>
+</body>
+    <script>
+        function generateDivs() {
+            var count = parseInt(document.getElementById("count").value);
+            var AllElementsColection = document.createDocumentFragment();
+
+            for (var i = 0; i < count; i++) {
+                var div = document.createElement("div");
+                var style = div.style;
+                style.height = randomNumber(20, 100);
+                style.width = randomNumber(20, 100);
+                style.backgroundColor = randomColor();
+                style.color = randomColor();
+                style.position = "absolute";
+                style.top = generateRandomPosition();
+                style.left = generateRandomPosition();
+                var newStrongElement = document.createElement("strong");
+                newStrongElement.textContent = "div";
+                div.appendChild(newStrongElement);
+                style.borderStyle = "solid";
+                style.borderRadius = randomNumber(1, 25);
+                style.borderColor = randomColor();
+                style.borderWidth = randomNumber(1, 20);
+                AllElementsColection.appendChild(div);
+            }
+
+            var bodyElement = document.getElementById("rap");
+            while (bodyElement.firstChild) bodyElement.removeChild(bodyElement.firstChild);
+            bodyElement.appendChild(AllElementsColection);
+        }
+
+        function randomColor() {
+            var red = (Math.random() * 256) | 0;
+            var green = (Math.random() * 256) | 0;
+            var blue = (Math.random() * 256) | 0;
+
+            return "rgb(" + red + "," + green + "," + blue + ")";
+        }
+
+        function generateRandomPosition() {
+            return Math.random() * screen.width + "px";
+        }
+
+        function randomNumber(min, max) {
+            return ((Math.random() * (max - min) | 0) + min) + "px";
+        }
+
+    </script>
+</html>

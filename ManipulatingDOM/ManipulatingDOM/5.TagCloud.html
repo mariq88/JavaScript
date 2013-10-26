@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>TagCloud</title>
+</head>
+<body>
+
+    <script>
+        var tags = ["cms", "javascript", "js", "ASP.NET MVC", ".net", ".net", "css", "wordpress", "xaml", "js", "http", "web", "asp.net", "asp.net MVC", "ASP.NET MVC", "wp", "javascript", "js", "cms", "html", "javascript", "http", "http", "CMS"];
+
+        document.write(tagCloud(tags));
+        //Here you can change the styles:
+        end += "<ul><li style='font-size:" + size + ";color:#333;' onmouseover='this.style.color=\"#cc0000\"' onmouseout='this.style.color=\"#333\"'>" + r + "</li></ul>";
+        
+        function tagCloud(tags) {
+            //set max font-size
+            var maxsize = 44;
+            //set min font-size
+            var minsize = 9;
+            //preset variables as to create no confusion
+            var tag = new Array(), ta = new Array();
+            var cloud = '', h = 0, val = 0, i = 0;
+            //proccess given tag array
+            //counting the accurances of tags
+            tags.forEach(function (tagElement) {
+                //current tag has already been recognized
+                if (tag[tagElement]) { tag[tagElement]++; }
+                    //current tag hasn't been recognized
+                else { tag[tagElement] = 1; ta[i++] = tagElement; }
+            });
+            //find the highest amount of tag accurances in the form of a number
+            ta.forEach(function (g) {
+                //if the current tag count is higher than the current highest, it is the current highest.
+                if (tag[g] > h) { h = tag[g]; }
+            });
+            val = (maxsize / h);//get the font-size interval needed to vary sizes
+            ta.forEach(function (r) {//set the size of the current tag by multiplying the interval by the amount of times the tag is used.
+                //set the size, if it is smaller than the minimum font-size, it is the minimum font-size.
+                var s = (Math.round(val * tag[r]) > minsize) ? Math.round(val * tag[r]) : minsize;
+                //concatenate finished styled tag into cloud
+                cloud += "<span style='font-size:" + s + "'>" + r + "</span>";
+            });
+            return cloud;
+        }
+    </script>
+
+</body>
+</html>

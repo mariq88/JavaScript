@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        DOM Manipulation. Random divs
+    </title>
+</head>
+<body>
+	<input type="text" id="tb-box-count" />
+	<a href="#" id="generate-boxes-btn" onclick="onGenerateBoxesButtonClick()">Generate boxes</a>
+	<div id="content">
+	</div>
+	<script>
+	    function onGenerateBoxesButtonClick() {
+	        var contentDiv = document.getElementById("content");
+	        while (contentDiv.firstChild) contentDiv.removeChild(contentDiv.firstChild);
+
+	        var count = (document.getElementById("tb-box-count").value | 0) || 5;
+
+	        for (var i = 0; i < count; i++) {
+	            contentDiv.appendChild(createDiv());
+	        }
+	        return false;
+	    }
+			
+	    function createDiv() {
+	        var result = document.createElement('div'),
+			style = result.style;
+
+	        style.width = getRandomInt(20, 100) + 'px';
+	        style.height = getRandomInt(20, 100) + 'px';
+
+	        style.backgroundColor = getRandomColor();
+
+	        style.color = getRandomColor();
+	        style.textAlign = 'center';
+
+	        style.position = 'absolute';
+	        style.top = getRandomInt(0, 75) + '%';
+	        style.left = getRandomInt(0, 75) + '%';
+
+	        style.borderRadius = getRandomInt(0, 50) + '%';
+	        style.borderColor = getRandomColor();
+	        style.borderWidth = getRandomInt(1, 20) + 'px';
+	        style.borderStyle = ['solid', 'dashed', 'dotted'][getRandomInt(0, 2)];
+
+	        result.appendChild(createStrong('div'));
+
+	        return result;
+	    }
+
+	    function createStrong(text) {
+	        var result = document.createElement('strong');
+
+	        result.appendChild(document.createTextNode(text));
+
+	        return result;
+	    }
+
+	    function getRandomColor() {
+	        return 'rgba(' + [
+				getRandomInt(0, 255),
+				getRandomInt(0, 255),
+				getRandomInt(0, 255),
+				getRandomInt(1, 10) / 10
+	        ].join(', ') + ')';
+	    }
+		  
+	    function getRandomInt(min, max) {
+	        return Math.floor(Math.random() * (max - min + 1)) + min;
+	    }
+	</script>
+</body>
+</html>
